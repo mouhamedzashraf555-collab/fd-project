@@ -1,0 +1,118 @@
+### Nile Bites API - Example Requests
+### Use with REST Client extension in VS Code or any HTTP client
+
+### Health Check
+GET http://localhost:3000/api/health
+
+###
+
+### Create Order
+POST http://localhost:3000/api/orders
+Content-Type: application/json
+
+{
+  "customer_name": "Ahmed Hassan",
+  "phone": "01234567890",
+  "address": "15 Tahrir Square, Cairo",
+  "items": [
+    {
+      "name": "Grilled Chicken",
+      "price": 300,
+      "quantity": 1
+    },
+    {
+      "name": "Mango Juice",
+      "price": 55,
+      "quantity": 2
+    }
+  ],
+  "total_price": 410
+}
+
+###
+
+### Get All Orders
+GET http://localhost:3000/api/orders
+
+###
+
+### Get Specific Order
+GET http://localhost:3000/api/orders/1
+
+###
+
+### Update Order Status
+PATCH http://localhost:3000/api/orders/1/status
+Content-Type: application/json
+
+{
+  "status": "confirmed"
+}
+
+###
+
+### Create Reservation
+POST http://localhost:3000/api/reservations
+Content-Type: application/json
+
+{
+  "customer_name": "Sara Mohamed",
+  "phone": "01234567890",
+  "number_of_people": 6
+}
+
+###
+
+### Get All Reservations
+GET http://localhost:3000/api/reservations
+
+###
+
+### Get Specific Reservation
+GET http://localhost:3000/api/reservations/1
+
+###
+
+### Update Reservation Status
+PATCH http://localhost:3000/api/reservations/1/status
+Content-Type: application/json
+
+{
+  "status": "confirmed"
+}
+
+###
+
+### Delete Reservation
+DELETE http://localhost:3000/api/reservations/1
+
+###
+
+### Send Contact Message
+POST http://localhost:3000/api/contacts
+Content-Type: application/json
+
+{
+  "name": "Omar Ali",
+  "phone": "01234567890",
+  "email": "omar.ali@example.com",
+  "message": "The food was amazing! Will definitely order again. Keep up the great work!"
+}
+
+###
+
+### Get All Contacts
+GET http://localhost:3000/api/contacts
+
+###
+
+### Get Specific Contact
+GET http://localhost:3000/api/contacts/1
+
+###
+
+### Delete Contact
+DELETE http://localhost:3000/api/contacts/1
+
+###
+
