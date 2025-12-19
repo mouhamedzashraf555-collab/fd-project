@@ -11,39 +11,39 @@ function validateEmail(email) {
 function displayCartSummary() {
     const orderItemsDiv = document.getElementById('order-items');
     const orderTotalSpan = document.getElementById('order-total');
-    
+
     if (!orderItemsDiv || !orderTotalSpan) return;
-    
+
     const storedCartData = localStorage.getItem('cartData');
-    
+
     if (!storedCartData) {
         orderItemsDiv.innerHTML = '<p style="text-align: center; color: #ff6b6b;">No items in cart. Please add items first.</p>';
         orderTotalSpan.textContent = '0 EGP';
         return;
     }
-    
+
     const tempDiv = document.createElement('div');
     tempDiv.innerHTML = storedCartData;
     const cartBoxes = tempDiv.querySelectorAll('.cart-box');
-    
+
     if (cartBoxes.length === 0) {
         orderItemsDiv.innerHTML = '<p style="text-align: center; color: #ff6b6b;">No items in cart. Please add items first.</p>';
         orderTotalSpan.textContent = '0 EGP';
         return;
     }
-    
+
     let html = '';
     let total = 0;
-    
+
     cartBoxes.forEach((item, index) => {
         const title = item.querySelector('.cart-food-title')?.innerText || '';
         const priceText = item.querySelector('.cart-price')?.innerText || '0';
         const qty = parseInt(item.querySelector('.cart-quantity')?.value || 1);
         const price = parseFloat(priceText.replace(/[^0-9.]/g, ''));
-        
+
         const itemTotal = price * qty;
         total += itemTotal;
-        
+
         html += `
             <div style="display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid rgba(205, 164, 94, 0.3);">
                 <span style="flex: 2;">${title}</span>
@@ -52,7 +52,7 @@ function displayCartSummary() {
             </div>
         `;
     });
-    
+
     orderItemsDiv.innerHTML = html;
     orderTotalSpan.textContent = total.toFixed(2) + ' EGP';
 }
@@ -66,7 +66,7 @@ function showNotification(message, type = 'success') {
     const notif = document.createElement('div');
     notif.className = `notification notification-${type}`;
     notif.textContent = message;
-    
+
     notif.style.cssText = `
         position: fixed;
         top: 20px;
@@ -85,28 +85,28 @@ function showNotification(message, type = 'success') {
     setTimeout(() => {
         notif.style.animation = 'slideOut 0.3s ease';
         setTimeout(() => notif.remove(), 4000);
-    }, 8000);
+    }, 10000);
 }
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     console.log('Forms.js loaded successfully');
     console.log('API available?', typeof api !== 'undefined');
     console.log('Current URL:', window.location.href);
-    
+
     const deliveryForm = document.querySelector('.del');
     if (deliveryForm && window.location.href.includes('Delivery.html')) {
         console.log('Delivery form found');
-        
+
         // Display cart summary
         displayCartSummary();
-        
+
         const sendBtn = deliveryForm.querySelector('.btn-send');
         if (sendBtn) {
             console.log('Send button found, attaching handler');
-            sendBtn.onclick = async function(e) {
+            sendBtn.onclick = async function (e) {
                 console.log('Send button clicked!');
                 e.preventDefault();
-                
+
                 const name = document.getElementById('txtName')?.value.trim();
                 const phone = document.getElementById('numphone')?.value.trim();
                 const address = document.getElementById('txtMail')?.value.trim();
@@ -127,44 +127,44 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 // Try to get from localStorage first
                 const storedCartData = localStorage.getItem('cartData');
-                
+
                 if (storedCartData) {
                     // Parse cart data from localStorage HTML
                     const tempDiv = document.createElement('div');
                     tempDiv.innerHTML = storedCartData;
                     const cartBoxes = tempDiv.querySelectorAll('.cart-box');
-                    
+
                     if (cartBoxes.length === 0) {
                         showNotification('Your cart is empty!', 'error');
                         return;
                     }
-                    
+
                     cartBoxes.forEach(item => {
                         const title = item.querySelector('.cart-food-title')?.innerText || '';
                         const priceText = item.querySelector('.cart-price')?.innerText || '0';
                         const qty = parseInt(item.querySelector('.cart-quantity')?.value || 1);
-                        
+
                         const price = parseFloat(priceText.replace(/[^0-9.]/g, ''));
-                        
+
                         items.push({ name: title, price, quantity: qty });
                         total += price * qty;
                     });
                 } else {
                     // Fallback: try to read from DOM (if on a page with cart)
                     const cartItems = document.querySelectorAll('.cart-box');
-                    
+
                     if (cartItems.length === 0) {
                         showNotification('Your cart is empty! Please add items first.', 'error');
                         return;
                     }
-                    
+
                     cartItems.forEach(item => {
                         const title = item.querySelector('.cart-food-title')?.innerText || '';
                         const priceText = item.querySelector('.cart-price')?.innerText || '0';
                         const qty = parseInt(item.querySelector('.cart-quantity')?.value || 1);
-                        
+
                         const price = parseFloat(priceText.replace(/[^0-9.]/g, ''));
-                        
+
                         items.push({ name: title, price, quantity: qty });
                         total += price * qty;
                     });
@@ -179,7 +179,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 };
 
                 console.log('Sending order data:', orderData);
-                
+
                 if (typeof api === 'undefined') {
                     console.error('API not loaded!');
                     showNotification('Error: API not loaded. Please refresh the page.', 'error');
@@ -197,11 +197,11 @@ document.addEventListener('DOMContentLoaded', function() {
                     document.getElementById('txtName').value = '';
                     document.getElementById('numphone').value = '';
                     document.getElementById('txtMail').value = '';
-                    
+
                     localStorage.removeItem('cartData');
                     const cartContent = document.querySelector('.cart-content');
                     if (cartContent) cartContent.innerHTML = '';
-                    
+
                     setTimeout(() => {
                         window.location.href = '/Html/home.html';
                     }, 2000);
@@ -218,13 +218,13 @@ document.addEventListener('DOMContentLoaded', function() {
     const reservationForm = document.querySelector('.del');
     if (reservationForm && window.location.href.includes('table reservation.html')) {
         console.log('Reservation form found');
-        
+
         const sendBtn = reservationForm.querySelector('.btn-send');
         if (sendBtn) {
             console.log('Reservation send button found');
-            sendBtn.onclick = async function(e) {
+            sendBtn.onclick = async function (e) {
                 e.preventDefault();
-                
+
                 const name = document.getElementById('Name')?.value.trim();
                 const phone = document.getElementById('phone')?.value.trim();
                 const people = document.getElementById('txtPeople')?.value;
@@ -261,7 +261,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     document.getElementById('Name').value = '';
                     document.getElementById('phone').value = '';
                     document.getElementById('txtPeople').value = '';
-                    
+
                     setTimeout(() => {
                         window.location.href = '/Html/home.html';
                     }, 2000);
@@ -279,9 +279,9 @@ document.addEventListener('DOMContentLoaded', function() {
     if (contactForm && window.location.href.includes('contact.html')) {
         const sendBtn = contactForm.querySelector('.btn-send');
         if (sendBtn) {
-            sendBtn.onclick = async function(e) {
+            sendBtn.onclick = async function (e) {
                 e.preventDefault();
-                
+
                 const name = document.getElementById('txtName')?.value.trim();
                 const phone = document.getElementById('numphone')?.value.trim();
                 const email = document.getElementById('txtMail')?.value.trim();
