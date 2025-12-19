@@ -1,0 +1,180 @@
+<html>
+    <head>
+        <title>Eastern_food</title>
+        <link rel="stylesheet" href="../css/food-style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <style>
+         .food{
+                background:linear-gradient(rgba(12,11,9,0.7),rgba(12,11,9,0.7)),url('..//photos/background_eastern_food.jpg');
+                background-size:cover;
+                background-attachment:fixed;
+                background-position: center;
+        } 
+        div {
+      opacity: 0; /* start invisible */
+      transform: translateY(30px); /* start lower */
+      animation: fadeInUp 1.5s ease-out forwards; /* run once */
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .btn-cart {
+    padding: 12px 24px;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    opacity: 0;               
+    transform: scale(0.5);     
+    animation: bounceIn 0.8s ease-out forwards; 
+  }
+
+  @keyframes bounceIn {
+    60% {
+      opacity: 1;
+      transform: scale(1.2);
+    }
+    80% {
+      transform: scale(0.9);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  } 
+    </style>
+    </head>
+    <body>
+        <section class="food">
+            <header>
+                <h1>eastern_food</h1>
+                <nav>
+                    <ul>
+                        <li><a href="home.html">Home</a></li>
+                        <li><a href="eastern_food.html">Eastern food🍲</a></li>
+                        <li><a href="fried_chicken.html">fried Chicken🍗</a></li>
+                        <li><a href="pasta&pizza.html">Pasta & pizza🍝🍕</a></li>
+                        <li><a href="sandwishes.html">Sandwiches🥖</a></li>
+                        <li><a href="juice.html">juices🍹</a></li>
+                        <li><a href="Dessert.html">Dessert🍰</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                    <button class="btn-cart">Cart
+                        <i class="fa fa-cart-plus" id="cart-icon"></i>
+                     </button>
+                     <div class="cart-count">0</div>
+                    </ul>
+                </nav>
+                
+                
+
+                <div class="cart">
+                    <div class="cart-title">Cart item</div>
+                    <div class="cart-content">
+                   </div>
+                    <div class="total">
+                        <div class="total-title">Total</div>
+                        <div class="total-price">0 EGP</div>
+                    </div>
+                    <p class="btn-p"><b>Place order</p></b>
+                    <button class="btn-buy"><a href="Delivery.html" class ="Link">Delivery</a></button>
+                    <button class="btn-buy"><a href="table reservation.html" class = "Link">book table</a></button>
+                    <i class="fa fa-close" id="cart-close"></i>
+                </div>
+
+            </header>
+
+            <div class="container">
+                <div class="food-box">
+                    <img src="..//photos/Molokhia.jpg" class="food-img">
+                    <h2 class="food-title">Molokhia</h2>
+                    <h3 class="food-price">50 EGP</h3>
+                    <button class="add-cart">Add to cart</button>
+                </div>
+
+                <div class="food-box">
+                    <img src="..//photos/Stuffed cabbage.jpg" class="food-img">
+                    <h2 class="food-title">Stuffed cabbage</h2>
+                    <h3 class="food-price">50 EGP</h3>
+                    <button class="add-cart">Add to cart</button>
+                </div>
+
+                <div class="food-box">
+                    <img src="..//photos/Stuffed grape leaves.png" class="food-img">
+                    <h2 class="food-title">stuffed grape leaves</h2>
+                    <h3 class="food-price">60 EGP</h3>
+                    <button class="add-cart">Add to cart</button>
+                </div>
+
+                <div class="food-box">
+                    <img src="..//photos/Mixed stuffed.jpg" class="food-img">
+                    <h2 class="food-title">Mixed stuffed</h2>
+                    <h3 class="food-price">80 EGP</h3>
+                    <button class="add-cart">Add to cart</button>
+                </div>
+
+                <div class="food-box">
+                    <img src="..//photos/Grilled Chicken.jpg.png" class="food-img">
+                    <h2 class="food-title">Grilled chicken</h2>
+                    <h3 class="food-price">300 EGP</h3>
+                    <button class="add-cart">Add to cart</button>
+                </div>
+
+                <div class="food-box">
+                    <img src="..//photos/Dove.jpeg" class="food-img">
+                    <h2 class="food-title">dove</h2>
+                    <h3 class="food-price">170 EGP</h3>
+                    <button class="add-cart">Add to cart</button>
+                </div>
+
+                <div class="food-box">
+                    <img src="..//photos/duck.jpg" class="food-img">
+                    <h2 class="food-title"> duck </h2>
+                    <h3 class="food-price">750 EGP</h3>
+                    <button class="add-cart">Add to cart</button>
+                </div>
+
+                <div class="food-box">
+                    <img src="..//photos/kebab hala.jpg" class="food-img">
+                    <h2 class="food-title">kebab hala</h2>
+                    <h3 class="food-price">200 EGP</h3>
+                    <button class="add-cart">Add to cart</button>
+                </div>
+
+                <div class="food-box">
+                    <img src="..//photos/Pie with chicken.jpg" class="food-img">
+                    <h2 class="food-title">pie with chicken</h2>
+                    <h3 class="food-price">240 EGP</h3>
+                    <button class="add-cart">Add to cart</button>
+                </div>
+
+                <div class="food-box">
+                    <img src="..//photos/Pie with sausage.jfif" class="food-img">
+                    <h2 class="food-title">pie with sausage</h2>
+                    <h3 class="food-price">250 EGP</h3>
+                    <button class="add-cart">Add to cart</button>
+                </div>
+
+                <div class="food-box">
+                    <img src="..//photos/Orzo soup.jpg" class="food-img">
+                    <h2 class="food-title">orzo soup</h2>
+                    <h3 class="food-price">60 EGP</h3>
+                    <button class="add-cart">Add to cart</button>
+                </div>
+
+                <div class="food-box">
+                    <img src="..//photos/rice.jpg" class="food-img">
+                    <h2 class="food-title">Rice</h2>
+                    <h3 class="food-price">30 EGP</h3>
+                    <button class="add-cart">Add to cart</button>
+                </div>
+
+            </div>
+        </section>
+        <script src="../java_script/script.js"></script>
+    </body>
+</html>

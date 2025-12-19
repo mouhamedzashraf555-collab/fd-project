@@ -1,0 +1,179 @@
+<html>
+    <head>
+        <title>Dessert</title>
+        <link rel="stylesheet" href="../css/food-style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <style>
+         .food{
+                background:linear-gradient(rgba(12,11,9,0.7),rgba(12,11,9,0.7)),url('..//photos/back\ ground_desert.jpg');
+                background-size:cover;
+                background-attachment:fixed;
+                background-position: center;
+        } 
+        div{
+      opacity: 0; /* start invisible */
+      transform: translateY(30px); /* start lower */
+      animation: fadeInUp 1.5s ease-out forwards; /* run once */
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .btn-cart {
+    padding: 12px 24px;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    opacity: 0;               
+    transform: scale(0.5);     
+    animation: bounceIn 0.8s ease-out forwards; 
+  }
+
+  @keyframes bounceIn {
+    60% {
+      opacity: 1;
+      transform: scale(1.2);
+    }
+    80% {
+      transform: scale(0.9);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    }    
+    </style>
+    </head>
+    <body>
+        <section class="food">
+            <header>
+                <h1>Dessert</h1>
+                <nav>
+                    <ul>
+                        <li><a href="home.html">Home</a></li>
+                        <li><a href="eastern_food.html">Eastern food🍲</a></li>
+                        <li><a href="fried_chicken.html">fried Chicken🍗</a></li>
+                        <li><a href="pasta&pizza.html">Pasta & pizza🍝🍕</a></li>
+                        <li><a href="sandwishes.html">Sandwiches🥖</a></li>
+                        <li><a href="juice.html">juices🍹</a></li>
+                        <li><a href="Dessert.html">Dessert🍰</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                    <button class="btn-cart">Cart
+                        <i class="fa fa-cart-plus" id="cart-icon"></i>
+                     </button>
+                     <div class="cart-count">0</div>
+                    </ul>
+                </nav>
+                
+                
+                <div class="cart">
+                    <div class="cart-title">Cart item</div>
+                    <div class="cart-content">    
+                </div>
+                    <div class="total">
+                        <div class="total-title">Total</div>
+                        <div class="total-price">0 EGP</div>
+                    </div>
+                    <p class="btn-p"><b>Place order</p></b>
+                    <button class="btn-buy"><a href="Delivery.html" class = "Link">Delivery</a></button>
+                    <button class="btn-buy"><a href="table reservation.html" class = "Link">book table</a></button>
+                    <i class="fa fa-close" id="cart-close"></i>
+                </div>
+
+            </header>
+
+            <div class="container">
+                <div class="food-box">
+                    <img src="..//photos/cheese_cake_lotus.jpeg" class="food-img">
+                    <h2 class="food-title">cheese cake lotus</h2>
+                    <h3 class="food-price">100 EGP</h3>
+                    <button class="add-cart">Add to cart</button>
+                </div>
+
+                <div class="food-box">
+                    <img src="..//photos/cheese_cake_strawberry.jpg" class="food-img">
+                    <h2 class="food-title">cheese cake strawberry</h2>
+                    <h3 class="food-price">90 EGP</h3>
+                    <button class="add-cart">Add to cart</button>
+                </div>
+
+                <div class="food-box">
+                    <img src="..//photos/cheese_cake_Chocolate.jpg" class="food-img">
+                    <h2 class="food-title">cheese cake Chocolate & Vanilla</h2>
+                    <h3 class="food-price">95 EGP</h3>
+                    <button class="add-cart">Add to cart</button>
+                </div>
+
+                <div class="food-box">
+                    <img src="..//photos/Sabliah.jpg" class="food-img">
+                    <h2 class="food-title">Sabliah</h2>
+                    <h3 class="food-price">kilo 200 EGP</h3>
+                    <button class="add-cart">Add to cart</button>
+                </div>
+
+                <div class="food-box">
+                    <img src="..//photos/waffle with chocolate.jpg" class="food-img">
+                    <h2 class="food-title">waffle with chocolate</h2>
+                    <h3 class="food-price">75 EGP</h3>
+                    <button class="add-cart">Add to cart</button>
+                </div>
+
+                <div class="food-box">
+                    <img src="..//photos/waffle with strawberries.jpg" class="food-img">
+                    <h2 class="food-title">waffle with strawberries</h2>
+                    <h3 class="food-price">70 EGP</h3>
+                    <button class="add-cart">Add to cart</button>
+                </div>
+
+                <div class="food-box">
+                    <img src="..//photos/kunafa.jpg" class="food-img">
+                    <h2 class="food-title">kunafa nabulsi</h2>
+                    <h3 class="food-price">kilo 220 EGP</h3>
+                    <button class="add-cart">Add to cart</button>
+                </div>
+
+                <div class="food-box">
+                    <img src="..//photos/zalabya.png" class="food-img">
+                    <h2 class="food-title">zalabya</h2>
+                    <h3 class="food-price">kilo 80 EGP</h3>
+                    <button class="add-cart">Add to cart</button>
+                </div>
+
+                <div class="food-box">
+                    <img src="../photos/Zainab's fingers.jfif" class="food-img">
+                    <h2 class="food-title">Zainab's fingers</h2>
+                    <h3 class="food-price">kilo 90 EGP</h3>
+                    <button class="add-cart">Add to cart</button>
+                </div>
+
+                <div class="food-box">
+                    <img src="..//photos/Alsham balah.jpg" class="food-img">
+                    <h2 class="food-title">Alsham balah</h2>
+                    <h3 class="food-price">kilo 100 EGP</h3>
+                    <button class="add-cart">Add to cart</button>
+                </div>
+
+                <div class="food-box">
+                    <img src="..//photos/basbosa.jpg" class="food-img">
+                    <h2 class="food-title">Basbosa</h2>
+                    <h3 class="food-price">kilo 110 EGP</h3>
+                    <button class="add-cart">Add to cart</button>
+                </div>
+
+                <div class="food-box">
+                    <img src="..//photos/Mix oriental sweets.jfif" class="food-img">
+                    <h2 class="food-title">Mix oriental sweets</h2>
+                    <h3 class="food-price">250 EGP</h3>
+                    <button class="add-cart">Add to cart</button>
+                </div>
+
+            </div>
+        </section>
+        <script src="../java_script/script.js"></script>
+    </body>
+</html>
